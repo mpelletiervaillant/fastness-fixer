@@ -33,17 +33,6 @@ h2 {
   text-shadow: .1em .1em .3em rgba(0, 0, 0, .6);
 }
 
-.ad-wrap {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 0;
-  position: relative;
-  width: 320px;
-
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-}
-
 .ad-wrap::before {
   content: "Advertisement";
   left: 50%;
