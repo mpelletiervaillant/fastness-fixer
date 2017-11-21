@@ -97,6 +97,14 @@ svg.img-flex {
   height: 100%;
 }
 
+.image-replacement, .ir {
+  overflow: hidden;
+  direction: ltr;
+  text-align: left;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
 .list-group, .list-group-inline, .list-group--inline {
   padding-left: 0;
   list-style-type: none;
@@ -104,6 +112,19 @@ svg.img-flex {
 
 .list-group > dd {
   margin-left: 0;
+}
+
+.list-group-inline::before,
+.list-group-inline::after,
+.list-group--inline::before,
+.list-group--inline::after {
+  content: "";
+  display: table;
+}
+
+.list-group-inline::after,
+.list-group--inline::after {
+  clear: both;
 }
 
 .list-group-inline > li,
@@ -160,12 +181,10 @@ svg.img-flex {
   width: 100%;
 }
 
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
+.clearfix::after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 .center-text,
@@ -176,6 +195,14 @@ svg.img-flex {
 .center-block {
   margin-left: auto;
   margin-right: auto;
+}
+
+.no-auto-margins,
+.not-centered {
+  /* stylelint-disable declaration-no-important */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  /* stylelint-enable */
 }
 
 .inline {
@@ -233,80 +260,6 @@ svg.img-flex {
 
 .zindex-1000 {
   z-index: 1000;
-}
-
-.pin-top-left,
-.pin-left-top,
-.pin-tl,
-.pin-lt {
-  top: 0;
-  left: 0;
-}
-
-.pin-top-right,
-.pin-right-top,
-.pin-tr,
-.pin-rt {
-  top: 0;
-  right: 0;
-}
-
-.pin-bottom-left,
-.pin-left-bottom,
-.pin-bl,
-.pin-lb {
-  bottom: 0;
-  left: 0;
-}
-
-.pin-bottom-right,
-.pin-right-bottom,
-.pin-br,
-.pin-rb {
-  bottom: 0;
-  right: 0;
-}
-
-.pin-top-center,
-.pin-center-top,
-.pin-tc,
-.pin-ct {
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-}
-
-.pin-bottom-center,
-.pin-center-bottom,
-.pin-bc,
-.pin-cb {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.pin-center-left,
-.pin-left-center,
-.pin-cl,
-.pin-lc {
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.pin-center-right,
-.pin-right-center,
-.pin-cr,
-.pin-rc {
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.pin-center, .pin-c {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .width-quarter, .w-1-4 {
